@@ -7,7 +7,6 @@ node {
                echo 'Running on Stage #0'
            }
            else {
-               build 'Tutorial-pipeline'
                echo 'Running on Stage #1'
            }
       }
