@@ -1,18 +1,21 @@
-node {
-  stage 'Commit stage' {
-    echo 'Compiling'
-    sleep 2
+pipeline {
+    agent any
 
-    echo 'Running unit tests'
-    sleep 2
-  }
-
-  stage 'Test'
-  echo 'Running component tests'
-  sleep 2
-
-  stage 'Deploy' {
-    echo 'Deploy to environment'
-    sleep 2
-  }
+    stages {
+        stage('Github') {
+            steps {
+                echo 'Github'
+            }
+        }
+        stage('Pipeline') {
+            steps {
+                echo 'Pipeline'
+            }
+        }
+        stage('Jenkins') {
+            steps {
+                echo 'Jenkins'
+            }
+        }
+    }
 }
