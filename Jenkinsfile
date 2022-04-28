@@ -1,13 +1,18 @@
 node {
-      for (i=0; i<2; i++) { 
-           stage "Stage #"+i
-           print 'This is the stage #' +i
-           if (i==0)
-           {
-               echo 'Running on Stage #0'
-           }
-           else {
-               echo 'Running on Stage #1'
-           }
-      }
+  stage 'Commit stage' {
+    echo 'Compiling'
+    sleep 2
+
+    echo 'Running unit tests'
+    sleep 2
+  }
+
+  stage 'Test'
+  echo 'Running component tests'
+  sleep 2
+
+  stage 'Deploy' {
+    echo 'Deploy to environment'
+    sleep 2
+  }
 }
